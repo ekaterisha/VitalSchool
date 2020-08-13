@@ -1,6 +1,7 @@
 const POSSIBLE_TYPES = ["none","rock"];
 const POSSIBLE_THINGS = ["nothing","boy","apples","apple-tree","red-cherry-tree","red-cherry","yellow-cherry-tree","yellow-cherry","stump"];
 const POSSIBLE_DIRS = ["N","S","E","W"];
+const POSSIBLE_ROTATIONS = ["nRight", "sLeft", "sRight", "nLeft", "wRight", "eLeft", "eRight", "wLeft"];
 const POSSIBLE_STATES = ["walking","waiting","recovering","hitting"];
 
 class Cell
@@ -132,6 +133,8 @@ class Thing
     changeClass(this.cell.getContainer(),POSSIBLE_THINGS,this.type);
     if(!!this.dir)
     changeClass(this.cell.getContainer(),POSSIBLE_DIRS,this.dir);
+    if(!!this.rotation)
+    changeClass(this.cell.getContainer(),POSSIBLE_ROTATIONS,this.rotation);
     if(!!this.state)
     changeClass(this.cell.getContainer(),POSSIBLE_STATES,this.state);
     if(!!this.label)
@@ -246,6 +249,7 @@ const nothing = new Thing(cells[0][0],{description: "Ничего."});
 const boy = new Thing(cells[51][51],{
   type: "boy",
   dir: "S",
+  rotation: "",
   state: "walking",
   name: "Я",
   necrolog: "Я умер.",
@@ -278,10 +282,14 @@ boy.turn = side =>
   boy.set("state","walking");
   switch (boy.dir+"->"+side)
   {
-    case "N->right": case "S->left": boy.set("dir","E"); break;
-    case "S->right": case "N->left": boy.set("dir","W"); break;
-    case "W->right": case "E->left": boy.set("dir","N"); break;
-    case "E->right": case "W->left": boy.set("dir","S"); break;
+    case "N->right": boy.set("dir","E"); boy.set('rotation', 'nRight'); break;
+    case "S->left": boy.set("dir","E"); boy.set('rotation', 'sLeft'); break;
+    case "S->right": boy.set("dir","W"); boy.set('rotation', 'sRight'); break; 
+    case "N->left": boy.set("dir","W"); boy.set('rotation', 'nLeft'); break;
+    case "W->right": boy.set("dir","N"); boy.set('rotation', 'wRight'); break;
+    case "E->left": boy.set("dir","N"); boy.set('rotation', 'eLeft'); break;
+    case "E->right": boy.set("dir","S"); boy.set('rotation', 'eRight'); break;
+    case "W->left": boy.set("dir","S"); boy.set('rotation', 'wLeft'); break;
   }
 }
 

@@ -99,18 +99,113 @@ input:invalid {border-color: red;}
 .boy {
   transition: .2s;
 }
-.boy.N {
-  transform: rotate(180deg);
+
+/* Снизу вправо */
+
+@keyframes rotate-animation-sLeft {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-90deg);
+  }
 }
-.boy.S {
-  transform: rotate(0deg);
-}
-.boy.E {
+.boy.sLeft {
+  animation: rotate-animation-sLeft 0.2s;
   transform: rotate(-90deg);
 }
-.boy.W {
+/* Сверху вправо */
+@keyframes rotate-animation-nRight {
+  0% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(270deg);
+  }
+}
+.boy.nRight {
+  animation: rotate-animation-nRight 0.2s;
+  transform: rotate(270deg);
+}
+/* Справа вниз */
+@keyframes rotate-animation-eRight {
+  0% {
+    transform: rotate(-90deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+.boy.eRight {
+  animation: rotate-animation-eRight 0.2s;
+  transform: rotate(0deg);
+}
+/* Справа вверх */
+@keyframes rotate-animation-eLeft {
+  0% {
+    transform: rotate(270deg);
+  }
+  100% {
+    transform: rotate(180deg);
+  }
+}
+.boy.eLeft {
+  animation: rotate-animation-eLeft 0.2s;
+  transform: rotate(180deg);
+}
+/* Слева вниз */
+@keyframes rotate-animation-wLeft {
+  0% {
+    transform: rotate(90deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+.boy.wLeft {
+  animation: rotate-animation-wLeft 0.2s;
+  transform: rotate(0deg);
+}
+/* Сверху влево */
+@keyframes rotate-animation-nLeft {
+  0% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(90deg);
+  }
+}
+.boy.nLeft {
+  animation: rotate-animation-nLeft 0.2s;
   transform: rotate(90deg);
 }
+/* Снизу влево */
+@keyframes rotate-animation-sRight {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(90deg);
+  }
+}
+.boy.sRight {
+  animation: rotate-animation-sRight 0.2s;
+  transform: rotate(90deg);
+}
+/* Слева вверх */
+@keyframes rotate-animation-wRight {
+  0% {
+    transform: rotate(90deg);
+  }
+  100% {
+    transform: rotate(180deg);
+  }
+}
+.boy.wRight {
+  animation: rotate-animation-wRight 0.2s;
+  transform: rotate(180deg);
+}
+
 .boy.walking {
   background-image: url(media/boy-walking.png);
 }
