@@ -1,0 +1,141 @@
+.gridBoxContainer {
+  max-width: 600px;
+}
+
+@media (min-width: 1000px) {
+#target-legend {
+  min-height: 250px;
+  margin-top: 15px;
+}
+}
+
+input:invalid {border-color: red;}
+
+.hidden {display: none !important;}
+
+.gridBox {
+  width: 100%;
+  padding-top: 100%;
+  position: relative;
+  margin:15px 0;
+}
+
+.gridBox>div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+#world {
+  height: 100%;
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 1px 1px;
+}
+
+#world td.node {
+  width:6px;
+  height:6px;
+}
+
+#world td.cell {
+  width:auto;
+  height:auto;
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+#world td.horizontal {
+  width:auto;
+  height:6px;
+}
+
+#world td.vertical {
+  width:6px;
+  height:auto;
+}
+
+#world td.border {
+  border: 1px dashed #d1d1d1;
+  background-color: #f7f9f9;
+}
+
+#world td.rock {
+  border: 1px outset #b1b1b1;
+  background-color: #c1c1c1;
+}
+
+#world td>span{
+  position: absolute;
+  font-weight: 900;
+  background-color: rgba(0,0,0,0.3);
+  border-radius: 10px;
+  padding: 0 3px;
+  font-size: 10px;
+  text-shadow: black 0px 0px 2px;
+}
+
+#log {
+  height: 300px;
+}
+
+.apple-tree {
+  background-image: url(media/apple-tree.png);
+  color:#9FEBFF;
+}
+.yellow-cherry-tree {
+  background-image: url(media/yellow-cherry-tree.png);
+  color:#EBFF9F;
+}
+.red-cherry-tree {
+  background-image: url(media/red-cherry-tree.png);
+  color:#FFB39F;
+}
+.stump {
+  background-image: url(media/stump.png);
+}
+.boy {
+  transition: .2s;
+}
+.boy.N {
+  transform: rotate(180deg);
+}
+.boy.S {
+  transform: rotate(0deg);
+}
+.boy.E {
+  transform: rotate(-90deg);
+}
+.boy.W {
+  transform: rotate(90deg);
+}
+.boy.walking {
+  background-image: url(media/boy-walking.png);
+}
+.boy.waiting {
+  background-image: url(media/boy-waiting.png);
+}
+.boy.recovering {
+  background-image: url(media/boy-recovering.png);
+}
+.boy.hitting {
+  background-image: url(media/boy-hitting.png);
+}
+.deadBoy {
+  background-image: url(media/boy-dead.png);
+}
+
+.red-pulse {
+  animation: pulse-animation 0.2s;
+}
+
+@keyframes pulse-animation {
+  0% {
+    box-shadow: 0 0 0 0px rgba(255, 0, 0, 0.2);
+  }
+  100% {
+    box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+  }
+}
